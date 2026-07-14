@@ -1,0 +1,62 @@
+=== Scenario A: sudo audit trail ===
+Jul 14 10:55:18 ip-172-31-37-184.ap-south-1.compute.internal sudo[4391]:    rocky : TTY=pts/1 ; PWD=/home/rocky ; USER=root ; COMMAND=/bin/whoami
+Jul 14 10:55:18 ip-172-31-37-184.ap-south-1.compute.internal sudo[4391]: pam_unix(sudo:session): session opened for user root(uid=0) by rocky(uid=1000)
+Jul 14 10:55:18 ip-172-31-37-184.ap-south-1.compute.internal sudo[4391]: pam_unix(sudo:session): session closed for user root
+Jul 14 10:55:28 ip-172-31-37-184.ap-south-1.compute.internal sudo[4394]:    rocky : TTY=pts/1 ; PWD=/home/rocky ; USER=root ; COMMAND=/bin/journalctl _COMM=sudo --since '5 minutes ago'
+Jul 14 10:55:28 ip-172-31-37-184.ap-south-1.compute.internal sudo[4394]: pam_unix(sudo:session): session opened for user root(uid=0) by rocky(uid=1000)
+Jul 14 10:55:45 ip-172-31-37-184.ap-south-1.compute.internal sudo[4394]: pam_unix(sudo:session): session closed for user root
+Jul 14 10:56:41 ip-172-31-37-184.ap-south-1.compute.internal sudo[4398]:    rocky : TTY=pts/1 ; PWD=/home/rocky ; USER=root ; COMMAND=/bin/mkdir -p /opt/shared
+Jul 14 10:56:41 ip-172-31-37-184.ap-south-1.compute.internal sudo[4398]: pam_unix(sudo:session): session opened for user root(uid=0) by rocky(uid=1000)
+Jul 14 10:56:41 ip-172-31-37-184.ap-south-1.compute.internal sudo[4398]: pam_unix(sudo:session): session closed for user root
+Jul 14 10:56:42 ip-172-31-37-184.ap-south-1.compute.internal sudo[4401]:    rocky : TTY=pts/1 ; PWD=/home/rocky ; USER=root ; COMMAND=/bin/chown rocky:rocky /opt/shared
+Jul 14 10:56:42 ip-172-31-37-184.ap-south-1.compute.internal sudo[4401]: pam_unix(sudo:session): session opened for user root(uid=0) by rocky(uid=1000)
+Jul 14 10:56:42 ip-172-31-37-184.ap-south-1.compute.internal sudo[4401]: pam_unix(sudo:session): session closed for user root
+Jul 14 11:07:39 ip-172-31-37-184.ap-south-1.compute.internal sudo[4692]:    rocky : TTY=pts/3 ; PWD=/home/rocky ; USER=root ; COMMAND=/bin/grep -i PasswordAuthentication\\|PubkeyAuthentication /etc/ssh/sshd_config
+Jul 14 11:07:39 ip-172-31-37-184.ap-south-1.compute.internal sudo[4692]: pam_unix(sudo:session): session opened for user root(uid=0) by rocky(uid=1000)
+Jul 14 11:07:39 ip-172-31-37-184.ap-south-1.compute.internal sudo[4692]: pam_unix(sudo:session): session closed for user root
+Jul 14 11:09:04 ip-172-31-37-184.ap-south-1.compute.internal sudo[4717]:    rocky : TTY=pts/3 ; PWD=/opt ; USER=root ; COMMAND=/bin/tar -cvf shared-backup-20260714-110904.tar shared/
+Jul 14 11:09:04 ip-172-31-37-184.ap-south-1.compute.internal sudo[4717]: pam_unix(sudo:session): session opened for user root(uid=0) by rocky(uid=1000)
+Jul 14 11:09:04 ip-172-31-37-184.ap-south-1.compute.internal sudo[4717]: pam_unix(sudo:session): session closed for user root
+Jul 14 11:09:40 ip-172-31-37-184.ap-south-1.compute.internal sudo[4721]:    rocky : TTY=pts/3 ; PWD=/opt ; USER=root ; COMMAND=/bin/tar -czvf shared-backup-gzip.tar.gz shared/
+Jul 14 11:09:40 ip-172-31-37-184.ap-south-1.compute.internal sudo[4721]: pam_unix(sudo:session): session opened for user root(uid=0) by rocky(uid=1000)
+Jul 14 11:09:40 ip-172-31-37-184.ap-south-1.compute.internal sudo[4721]: pam_unix(sudo:session): session closed for user root
+Jul 14 11:09:40 ip-172-31-37-184.ap-south-1.compute.internal sudo[4725]:    rocky : TTY=pts/3 ; PWD=/opt ; USER=root ; COMMAND=/bin/tar -cjvf shared-backup-bzip2.tar.bz2 shared/
+Jul 14 11:09:40 ip-172-31-37-184.ap-south-1.compute.internal sudo[4725]: pam_unix(sudo:session): session opened for user root(uid=0) by rocky(uid=1000)
+Jul 14 11:09:40 ip-172-31-37-184.ap-south-1.compute.internal sudo[4725]: pam_unix(sudo:session): session closed for user root
+Jul 14 11:09:54 ip-172-31-37-184.ap-south-1.compute.internal sudo[4732]:    rocky : TTY=pts/3 ; PWD=/opt ; USER=root ; COMMAND=/bin/rm /opt/shared/app.conf
+Jul 14 11:09:54 ip-172-31-37-184.ap-south-1.compute.internal sudo[4732]: pam_unix(sudo:session): session opened for user root(uid=0) by rocky(uid=1000)
+Jul 14 11:09:54 ip-172-31-37-184.ap-south-1.compute.internal sudo[4732]: pam_unix(sudo:session): session closed for user root
+Jul 14 11:09:54 ip-172-31-37-184.ap-south-1.compute.internal sudo[4737]:    rocky : TTY=pts/3 ; PWD=/opt ; USER=root ; COMMAND=/bin/tar -xvf shared-backup-20260714-110904.tar -C /tmp/restore-test
+Jul 14 11:09:54 ip-172-31-37-184.ap-south-1.compute.internal sudo[4737]: pam_unix(sudo:session): session opened for user root(uid=0) by rocky(uid=1000)
+Jul 14 11:09:54 ip-172-31-37-184.ap-south-1.compute.internal sudo[4737]: pam_unix(sudo:session): session closed for user root
+Jul 14 11:10:38 ip-172-31-37-184.ap-south-1.compute.internal sudo[4743]:    rocky : TTY=pts/3 ; PWD=/opt ; USER=root ; COMMAND=/bin/dnf install -y bzip2
+Jul 14 11:10:38 ip-172-31-37-184.ap-south-1.compute.internal sudo[4743]: pam_unix(sudo:session): session opened for user root(uid=0) by rocky(uid=1000)
+Jul 14 11:10:40 ip-172-31-37-184.ap-south-1.compute.internal sudo[4743]: pam_unix(sudo:session): session closed for user root
+Jul 14 11:10:40 ip-172-31-37-184.ap-south-1.compute.internal sudo[5580]:    rocky : TTY=pts/3 ; PWD=/opt ; USER=root ; COMMAND=/bin/tar -cjvf shared-backup-bzip2.tar.bz2 shared/
+Jul 14 11:10:40 ip-172-31-37-184.ap-south-1.compute.internal sudo[5580]: pam_unix(sudo:session): session opened for user root(uid=0) by rocky(uid=1000)
+Jul 14 11:10:40 ip-172-31-37-184.ap-south-1.compute.internal sudo[5580]: pam_unix(sudo:session): session closed for user root
+Jul 14 11:11:24 ip-172-31-37-184.ap-south-1.compute.internal sudo[14533]:    rocky : TTY=pts/3 ; PWD=/home/rocky ; USER=root ; COMMAND=/bin/journalctl _COMM=sudo --since '1 hour ago'
+Jul 14 11:11:24 ip-172-31-37-184.ap-south-1.compute.internal sudo[14533]: pam_unix(sudo:session): session opened for user root(uid=0) by rocky(uid=1000)
+
+=== Scenario B: hard link + symlink proof ===
+(see terminal history - inode 25168525 shared by app.conf/app.conf.bak)
+
+=== Scenario C: grep investigation ===
+10:59:29 ERROR: timeout on request id=7
+10:59:36 ERROR: timeout on request id=14
+10:59:43 ERROR: timeout on request id=21
+10:59:50 ERROR: timeout on request id=28
+
+=== Scenario D: authorized_keys entries ===
+ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQC6XEKS5j2pGCHam0FwVAkAlM8cpclquookv7VrDh6RYuIMtU5Xmnoivkk+BrLOjZ81NdtxGRqKH5TsT+ElduIKLxfEdPxugkGJUT2YdGuAD0TYNzRrFHf+mQwLz7VgWK2wDv/rGhDPAsRf78q4CnQbcYCvsZdiyw5G2NurBQaevtf8lc0tdjyHRMRMTbqwpWZxWOXJG3NXLwvLRMieLIer+d00SWibjVLKxHh/6uixCDK5o4nPNdxL3LtduHk98etkmlk2bdyjfH0y4qp0dhpGw/QOqBNRcuR3hwI2ZfdCk3z3t4lZ2yNpb5jvpNu0qM21gTnHMPCkvT1xHyNSveTd rhcsa-lab-key
+ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIILTyDxol+FLr+8Lo11jdybHr07PdJO0REgiyPzTNjVl scenario-d-test-key
+
+=== Scenario E: backup listing ===
+drwxr-xr-x rocky/rocky       0 2026-07-14 11:01 shared/
+-rw-r--r-- rocky/rocky      12 2026-07-14 10:56 shared/app.conf
+-rw-r--r-- rocky/rocky    1334 2026-07-14 10:59 shared/app.log
+-rw-r--r-- rocky/rocky     163 2026-07-14 11:00 shared/errors-only.log
+-rw-r--r-- rocky/rocky     163 2026-07-14 11:01 shared/found.log
+-rw-r--r-- rocky/rocky       0 2026-07-14 11:01 shared/search-errors.log
+-rw-r--r-- rocky/rocky       0 2026-07-14 11:01 shared/found2.log
+-rw-r--r-- rocky/rocky      54 2026-07-14 11:01 shared/search-errors2.log
