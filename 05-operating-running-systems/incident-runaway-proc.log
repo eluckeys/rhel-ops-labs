@@ -1,0 +1,2 @@
+Jul 14 09:16:35 ip-172-31-37-184.ap-south-1.compute.internal incident-runaway-proc[4144]: Applied renice 15 to PID 4126 as first mitigation
+Jul 14 09:17:52 ip-172-31-37-184.ap-south-1.compute.internal incident-runaway-proc[4147]: Terminated PID 4126 after renice did not resolve high CPU load
