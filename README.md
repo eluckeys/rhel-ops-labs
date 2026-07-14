@@ -16,14 +16,16 @@ done from memory, not by continuing a half-configured box.
 
 | # | Course | Status | Scenario |
 |---|--------|--------|----------|
-| 1 | Using Essential Tools | ✅ Complete | [Unfamiliar production box recon](01-essential-tools/scenario.md) |
+| 1 | Using Essential Tools | 🔲 Scaffolded — script written, not yet run live | [Unfamiliar production box recon](01-essential-tools/scenario.md) |
 | 2 | Creating Shell Scripts | 🔲 Not started | |
 | 3 | Managing Software | 🔲 Not started | |
 | 4 | Configuring Local Storage | 🔲 Not started | |
-| 5 | Operating Running Systems | 🔲 Not started | |
+| 5 | Operating Running Systems | 🟡 In progress — 4/~20 sub-items done live on AWS with log proof | |
 | 6 | Creating and Configuring File Systems | 🔲 Not started | |
 | 7 | Deploying, Configuring, and Maintaining Systems | 🔲 Not started | |
 | 8 | Managing Basic Networking | 🔲 Not started | |
+
+**Status key:** 🔲 not started/scaffolded only · 🟡 in progress (some items run live with proof) · ✅ complete (all checklist items run live with proof/logs committed)
 
 ## Lab infrastructure
 
