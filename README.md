@@ -16,11 +16,11 @@ done from memory, not by continuing a half-configured box.
 
 | # | Course | Status | Scenario |
 |---|--------|--------|----------|
-| 1 | Using Essential Tools | 🔲 Scaffolded — script written, not yet run live | [Unfamiliar production box recon](01-essential-tools/scenario.md) |
+| 1 | Using Essential Tools | ✅ Complete — all 5 scenarios run live on AWS with evidence log | [Unfamiliar production box recon](01-essential-tools/scenario.md) |
 | 2 | Creating Shell Scripts | 🔲 Not started | |
 | 3 | Managing Software | 🔲 Not started | |
 | 4 | Configuring Local Storage | 🔲 Not started | |
-| 5 | Operating Running Systems | 🟡 In progress — 4/~20 sub-items done live on AWS with log proof | |
+| 5 | Operating Running Systems | 🟡 In progress — 4/~20 sub-items done live on AWS with log proof | [Runaway process incident](05-operating-running-systems/scenario.md) |
 | 6 | Creating and Configuring File Systems | 🔲 Not started | |
 | 7 | Deploying, Configuring, and Maintaining Systems | 🔲 Not started | |
 | 8 | Managing Basic Networking | 🔲 Not started | |
