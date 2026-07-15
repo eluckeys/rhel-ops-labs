@@ -17,7 +17,7 @@ done from memory, not by continuing a half-configured box.
 | # | Course | Status | Scenario |
 |---|--------|--------|----------|
 | 1 | Using Essential Tools | ✅ Complete — all 5 scenarios run live on AWS with evidence log | [Unfamiliar production box recon](01-essential-tools/scenario.md) |
-| 2 | Creating Shell Scripts | 🔲 Not started | |
+| 2 | Creating Shell Scripts | ✅ Complete — 3 scenarios run live on AWS with evidence log | [Cron/args/deploy scenarios](02-shell-scripting/scenario.md) |
 | 3 | Managing Software | 🔲 Not started | |
 | 4 | Configuring Local Storage | 🔲 Not started | |
 | 5 | Operating Running Systems | 🟡 In progress — 4/~20 sub-items done live on AWS with log proof | [Runaway process incident](05-operating-running-systems/scenario.md) |
